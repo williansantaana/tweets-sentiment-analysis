@@ -14,7 +14,7 @@ def main():
         print("Parâmetros aceitos: ASC, DESC.")
         sys.exit()
 
-    select_query = f"SELECT id, pub_id, pub_img FROM tweets WHERE pub_img IS NOT NULL AND pub_img_caption IS NULL ORDER BY {order_by} LIMIT 100"
+    select_query = f"SELECT id, pub_id, pub_img FROM tweets WHERE pub_img IS NOT NULL AND pub_img_caption IS NULL ORDER BY id {order_by} LIMIT 100"
     update_query = "UPDATE tweets SET pub_img_caption = %s WHERE id = %s"
 
     while True:
